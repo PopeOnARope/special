@@ -1,0 +1,140 @@
+{
+  "name": "nextjs-commerce",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm-run-all build:tailwind --parallel next-dev --parallel watch:tailwind --parallel sass:watch",
+    "build": "next build",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "find:unused": "next-unused",
+    "prettier": "prettier",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "next-dev": "next dev",
+    "build:tailwind": "tailwind build src/tailwind.css -o src/tailwind.output.css",
+    "watch:tailwind": "chokidar 'src/**/*.css' 'src/**/*.scss' --ignore src/tailwind.output.css -c 'npm run build:tailwind'",
+    "start:react": "react-scripts start",
+    "prebuild": "run-s build:tailwind"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "next-unused": {
+    "alias": {
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
+    },
+    "debug": true,
+    "include": [
+      "components",
+      "lib",
+      "pages",
+      "sections"
+    ],
+    "exclude": [],
+    "entrypoints": [
+      "pages"
+    ]
+  },
+  "dependencies": {
+    "@builder.io/react": "^1.1.43",
+    "@builder.io/utils": "^1.0.3",
+    "@builder.io/widgets": "^1.2.19",
+    "@netlify/plugin-nextjs": "^3.1.0-experimental-odb.2",
+    "@reach/portal": "^0.11.2",
+    "@tailwindcss/ui": "^0.6.2",
+    "@testing-library/react-hooks": "^3.7.0",
+    "@theme-ui/components": "^0.6.2",
+    "@theme-ui/match-media": "^0.7.2",
+    "@theme-ui/preset-base": "^0.6.0",
+    "@theme-ui/presets": "^0.6.2",
+    "@types/body-scroll-lock": "^2.6.1",
+    "@types/lodash.throttle": "^4.1.6",
+    "@types/qs": "^6.9.5",
+    "@types/react-sticky": "^6.0.3",
+    "@types/shopify-buy": "^2.10.3",
+    "@types/traverse": "^0.6.32",
+    "@vercel/fetch": "^6.1.0",
+    "atob": "^2.1.2",
+    "body-scroll-lock": "^3.1.5",
+    "bootstrap-react": "^0.5.0-alpha.14",
+    "bowser": "^2.11.0",
+    "cheerio": "^1.0.0-rc.6",
+    "chokidar-cli": "^2.1.0",
+    "classnames": "^2.2.6",
+    "css-color-names": "^1.0.1",
+    "email-validator": "^2.0.4",
+    "jest": "^26.6.3",
+    "js-cookie": "^2.2.1",
+    "keen-slider": "^5.2.4",
+    "lodash.random": "^3.2.0",
+    "lodash.throttle": "^4.1.1",
+    "moment": "^2.29.1",
+    "next": "^10.2.0",
+    "next-images": "^1.8.1",
+    "next-seo": "^4.11.0",
+    "next-themes": "^0.0.4",
+    "npm-run-all": "^4.1.5",
+    "postcss-nesting": "^7.0.1",
+    "qs": "^6.9.6",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-carousel-vertical": "^1.10.27",
+    "react-dom": "^17.0.2",
+    "react-grid-system": "^7.2.0",
+    "react-intersection-observer": "^8.30.1",
+    "react-json-tree": "^0.13.0",
+    "react-merge-refs": "^1.1.0",
+    "react-spring": "^9.2.3",
+    "react-spring-modal": "^2.0.7",
+    "react-sticky": "^6.0.3",
+    "react-ticker": "^1.2.2",
+    "shopify-buy": "^2.11.0",
+    "styled-components": "^5.3.0",
+    "tailwindcss": "^1.9.6",
+    "theme-ui": "^0.6.2",
+    "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@next/bundle-analyzer": "^10.0.1",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "@types/atob": "^2.1.2",
+    "@types/bunyan": "^1.8.6",
+    "@types/bunyan-prettystream": "^0.1.31",
+    "@types/classnames": "^2.2.10",
+    "@types/js-cookie": "^2.2.6",
+    "@types/lodash.random": "^3.2.6",
+    "@types/node": "^14.11.2",
+    "@types/react": "^16.9.49",
+    "babel-loader": "^8.2.2",
+    "bunyan": "^1.8.14",
+    "bunyan-prettystream": "^0.1.3",
+    "next-unused": "0.0.6",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  },
+  "resolutions": {
+    "webpack": "^5.0.0-beta.30"
+  },
+  "license": "MIT"
+}
